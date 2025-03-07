@@ -1,3 +1,4 @@
+import FeaturesSection from "@/components/Home/features-section";
 import { HeroImagesSlider } from "@/components/Home/ImagesSlider";
 import ProductCard from "@/components/Product/ProductCard";
 import { products } from "@/data/products";
@@ -7,6 +8,9 @@ export default function Home() {
     <div className="min-h-screen">
       <main className="flex flex-col justify-center items-center">
         <HeroImagesSlider />
+
+        {/* Features Section */}
+        <FeaturesSection />
 
         {/* Featured Products */}
         <section className="py-20 bg-gray-50">
