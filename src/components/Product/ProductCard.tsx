@@ -3,8 +3,14 @@ import { motion } from "framer-motion";
 import { ShoppingBag, Star, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { ProductCardProps } from "@/types/product";
 
-export default function ProductCard({ image, title, price, category }) {
+export default function ProductCard({
+  image,
+  title,
+  price,
+  category,
+}: ProductCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
