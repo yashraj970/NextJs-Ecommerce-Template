@@ -1,13 +1,6 @@
 "use client";
-import { motion } from "motion/react";
-import {
-  ShoppingBag,
-  Star,
-  Truck,
-  Shield,
-  ArrowRight,
-  Heart,
-} from "lucide-react";
+import { motion } from "framer-motion";
+import { ShoppingBag, Star, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
