@@ -1,6 +1,5 @@
 import { HeroImagesSlider } from "@/components/Home/ImagesSlider";
 import ProductCard from "@/components/Product/ProductCard";
-import Image from "next/image";
 
 export default function Home() {
   const products = [
@@ -26,7 +25,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <main className="flex flex-col justify-centeritems-center">
+      <main className="flex flex-col justify-center items-center">
         <HeroImagesSlider />
 
         {/* Featured Products */}
