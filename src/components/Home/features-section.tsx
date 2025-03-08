@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 import {
   ShieldCheck,
   Truck,
@@ -48,26 +49,14 @@ export default function FeaturesSection() {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
+  const animatedBackgrounds = useMemo(() => {
+    return [...Array(5)].map(() => ({
+      x: Math.random() * 100 - 50 + "%",
+      y: Math.random() * 100 - 50 + "%",
+      scale: Math.random() * 0.5 + 0.5,
+      duration: 20 + Math.random() * 10,
+    }));
+  }, []); // Runs only once on mount
 
   return (
     <section className="py-24 relative overflow-hidden">
@@ -76,30 +65,26 @@ export default function FeaturesSection() {
 
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(5)].map((_, i) => (
+        {animatedBackgrounds.map((bg, i) => (
           <motion.div
             key={i}
             className="absolute h-[300px] w-[300px] rounded-full bg-emerald-500/10"
-            initial={{
-              x: Math.random() * 100 - 50 + "%",
-              y: Math.random() * 100 - 50 + "%",
-              scale: Math.random() * 0.5 + 0.5,
-            }}
+            initial={{ x: bg.x, y: bg.y, scale: bg.scale }}
             animate={{
               x: [
-                Math.random() * 100 - 50 + "%",
+                bg.x,
                 Math.random() * 100 - 50 + "%",
                 Math.random() * 100 - 50 + "%",
               ],
               y: [
-                Math.random() * 100 - 50 + "%",
+                bg.y,
                 Math.random() * 100 - 50 + "%",
                 Math.random() * 100 - 50 + "%",
               ],
             }}
             transition={{
-              duration: 20 + Math.random() * 10,
-              repeat: Number.POSITIVE_INFINITY,
+              duration: bg.duration,
+              repeat: Infinity,
               repeatType: "reverse",
             }}
           />
@@ -140,7 +125,6 @@ export default function FeaturesSection() {
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -148,7 +132,6 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
               className="bg-black/40 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-8 hover:border-emerald-500/40 transition-colors group"
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
