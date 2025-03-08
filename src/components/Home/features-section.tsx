@@ -1,6 +1,6 @@
 "use client";
+
 import { motion } from "framer-motion";
-import { useMemo } from "react";
 import {
   ShieldCheck,
   Truck,
@@ -9,8 +9,12 @@ import {
   CreditCard,
   Gift,
 } from "lucide-react";
+import { useId } from "react";
 
 export default function FeaturesSection() {
+  // Use useId to generate stable IDs for server/client rendering
+  const id = useId();
+
   const features = [
     {
       icon: <ShieldCheck className="h-10 w-10" />,
@@ -49,42 +53,56 @@ export default function FeaturesSection() {
     },
   ];
 
-  const animatedBackgrounds = useMemo(() => {
-    return [...Array(5)].map(() => ({
-      x: Math.random() * 100 - 50 + "%",
-      y: Math.random() * 100 - 50 + "%",
-      scale: Math.random() * 0.5 + 0.5,
-      duration: 20 + Math.random() * 10,
-    }));
-  }, []); // Runs only once on mount
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  // Fixed positions for background elements to prevent hydration errors
+  const bgElements = [
+    { x: "10%", y: "20%", scale: 0.8, delay: 0 },
+    { x: "70%", y: "15%", scale: 0.6, delay: 2 },
+    { x: "25%", y: "60%", scale: 0.7, delay: 4 },
+    { x: "80%", y: "70%", scale: 0.9, delay: 6 },
+    { x: "40%", y: "30%", scale: 0.5, delay: 8 },
+  ];
 
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black pointer-events-none" />
 
-      {/* Animated background elements */}
+      {/* Animated background elements with fixed positions */}
       <div className="absolute inset-0 overflow-hidden">
-        {animatedBackgrounds.map((bg, i) => (
+        {bgElements.map((el, i) => (
           <motion.div
-            key={i}
+            key={`${id}-bg-${i}`}
             className="absolute h-[300px] w-[300px] rounded-full bg-emerald-500/10"
-            initial={{ x: bg.x, y: bg.y, scale: bg.scale }}
+            initial={{ x: el.x, y: el.y, scale: el.scale }}
             animate={{
-              x: [
-                bg.x,
-                Math.random() * 100 - 50 + "%",
-                Math.random() * 100 - 50 + "%",
-              ],
-              y: [
-                bg.y,
-                Math.random() * 100 - 50 + "%",
-                Math.random() * 100 - 50 + "%",
-              ],
+              x: [el.x, `calc(${el.x} + 5%)`, el.x],
+              y: [el.y, `calc(${el.y} + 5%)`, el.y],
             }}
             transition={{
-              duration: bg.duration,
-              repeat: Infinity,
+              duration: 15,
+              delay: el.delay,
+              repeat: Number.POSITIVE_INFINITY,
               repeatType: "reverse",
             }}
           />
@@ -125,13 +143,15 @@ export default function FeaturesSection() {
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {features.map((feature, index) => (
             <motion.div
-              key={index}
+              key={`${id}-feature-${index}`}
+              variants={itemVariants}
               className="bg-black/40 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-8 hover:border-emerald-500/40 transition-colors group"
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
