@@ -208,7 +208,7 @@ export default function OrdersPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [dateFilter, setDateFilter] = useState<string>("all");
-  const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
+  // const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
@@ -525,7 +525,7 @@ export default function OrdersPage() {
                               <Button
                                 variant="outline"
                                 size="sm"
-                                onClick={() => setSelectedOrder(order)}
+                                // onClick={() => setSelectedOrder(order)}
                               >
                                 <Eye className="mr-2 h-4 w-4" />
                                 View Details
