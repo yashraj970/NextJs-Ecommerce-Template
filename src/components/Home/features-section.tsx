@@ -136,8 +136,8 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            We're committed to providing an exceptional shopping experience with
-            premium products and unmatched service.
+            We&apos;re committed to providing an exceptional shopping experience
+            with premium products and unmatched service.
           </motion.p>
         </div>
 
