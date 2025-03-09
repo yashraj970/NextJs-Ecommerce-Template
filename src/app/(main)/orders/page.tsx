@@ -716,7 +716,7 @@ export default function OrdersPage() {
                       statusFilter !== "all" ||
                       dateFilter !== "all"
                         ? "Try adjusting your filters or search query"
-                        : "You haven't placed any orders yet"}
+                        : "You haven&apos;t placed any orders yet"}
                     </p>
                     {searchQuery ||
                     statusFilter !== "all" ||
@@ -747,10 +747,10 @@ export default function OrdersPage() {
                       How can I track my order?
                     </AccordionTrigger>
                     <AccordionContent>
-                      You can track your order by clicking the "View Details"
-                      button on any shipped order. This will show you the
-                      tracking number and a link to track your package with the
-                      carrier.
+                      You can track your order by clicking the &quot;View
+                      Details&quot; button on any shipped order. This will show
+                      you the tracking number and a link to track your package
+                      with the carrier.
                     </AccordionContent>
                   </AccordionItem>
 
@@ -758,9 +758,9 @@ export default function OrdersPage() {
                     <AccordionTrigger>Can I cancel my order?</AccordionTrigger>
                     <AccordionContent>
                       Orders can only be cancelled if they are still in the
-                      "Processing" status. Once an order has been shipped, it
-                      cannot be cancelled. Please contact customer support if
-                      you need assistance with cancelling an order.
+                      &quot;Processing&quot; status. Once an order has been
+                      shipped, it cannot be cancelled. Please contact customer
+                      support if you need assistance with cancelling an order.
                     </AccordionContent>
                   </AccordionItem>
 
@@ -770,10 +770,10 @@ export default function OrdersPage() {
                     </AccordionTrigger>
                     <AccordionContent>
                       To return an item, go to the order details and click the
-                      "Return Item" button. You&apos;ll need to select a reason for
-                      the return and follow the instructions to print a return
-                      label. Returns must be initiated within 30 days of
-                      delivery.
+                      &quot;Return Item&quot; button. You&apos;ll need to select
+                      a reason for the return and follow the instructions to
+                      print a return label. Returns must be initiated within 30
+                      days of delivery.
                     </AccordionContent>
                   </AccordionItem>
 
