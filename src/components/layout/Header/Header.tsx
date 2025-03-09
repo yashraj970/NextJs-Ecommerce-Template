@@ -40,8 +40,6 @@ export default function Header() {
   const routes = [
     { name: "Home", path: "/" },
     { name: "Shop", path: "/shop" },
-    { name: "Categories", path: "/categories" },
-    { name: "New Arrivals", path: "/new-arrivals" },
     { name: "Sale", path: "/sale" },
   ];
 
