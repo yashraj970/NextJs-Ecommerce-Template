@@ -770,7 +770,7 @@ export default function OrdersPage() {
                     </AccordionTrigger>
                     <AccordionContent>
                       To return an item, go to the order details and click the
-                      "Return Item" button. You'll need to select a reason for
+                      "Return Item" button. You&apos;ll need to select a reason for
                       the return and follow the instructions to print a return
                       label. Returns must be initiated within 30 days of
                       delivery.
