@@ -226,7 +226,7 @@ export default function SalePage() {
               SUMMER SALE
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-              Up to 50% off on selected items. Don't miss out on these
+              Up to 50% off on selected items. Don&apos;t miss out on these
               incredible deals!
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -467,7 +467,7 @@ export default function SalePage() {
               Top Sale Products
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Discover our most popular discounted items before they're gone
+              Discover our most popular discounted items before they&apos;re gone
             </p>
           </div>
 
