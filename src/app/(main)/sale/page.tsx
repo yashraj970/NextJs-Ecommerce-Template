@@ -219,7 +219,7 @@ export default function SalePage() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <Badge className="mb-4 px-4 py-1 text-lg bg-red-500 hover:bg-red-600">
+            <Badge className="mb-2 px-4 py-1 text-lg bg-red-500 hover:bg-red-600">
               Limited Time
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-300">
@@ -249,10 +249,6 @@ export default function SalePage() {
                 <span className="text-sm">Seconds</span>
               </div>
             </div>
-            <Button className="bg-red-500 hover:bg-red-600 text-white rounded-full px-8 py-6 text-lg">
-              Shop Now
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
           </motion.div>
         </div>
       </div>
