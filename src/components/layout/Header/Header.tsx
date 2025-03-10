@@ -142,7 +142,7 @@ export default function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="hidden md:flex text-white hover:bg-white/10"
+                className="hidden md:flex text-white hover:bg-white/10 hover:text-emerald-400"
                 onClick={() => setIsSearchOpen(true)}
               >
                 <Search className="h-5 w-5" />
@@ -154,7 +154,7 @@ export default function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-white hover:bg-white/10"
+                className="text-white hover:bg-white/10 hover:text-emerald-400"
               >
                 <Heart className="h-5 w-5" />
                 <span className="sr-only">Wishlist</span>
@@ -166,7 +166,7 @@ export default function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white hover:bg-white/10"
+                  className="text-white hover:bg-white/10 hover:text-emerald-400"
                 >
                   <User className="h-5 w-5" />
                   <span className="sr-only">Account</span>
@@ -198,7 +198,7 @@ export default function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="relative text-white hover:bg-white/10"
+                className="relative text-white hover:bg-white/10 hover:text-emerald-400"
               >
                 <ShoppingCart className="h-5 w-5" />
                 <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-emerald-500 text-xs text-white flex items-center justify-center">
