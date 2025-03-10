@@ -59,15 +59,6 @@ const cartItems = [
     quantity: 1,
     color: "Brown",
   },
-  {
-    id: 7,
-    title: "Cashmere Scarf",
-    price: 79.99,
-    image:
-      "https://images.unsplash.com/photo-1584736286279-75260e76eb21?q=80&w=1974&auto=format&fit=crop",
-    quantity: 1,
-    color: "Red",
-  },
 ];
 
 // Calculate order totals
@@ -189,7 +180,6 @@ export default function CheckoutPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-8">
-
       <div className="container mx-auto px-4 py-12">
         {/* Checkout Steps */}
         <div className="max-w-4xl mx-auto mb-10">
