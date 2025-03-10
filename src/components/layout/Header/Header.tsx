@@ -69,7 +69,7 @@ export default function Header() {
                 side="left"
                 className="w-[300px] sm:w-[400px] bg-black/90 border-r border-emerald-500/20"
               >
-                <div className="py-6">
+                <div className="p-6">
                   <Link href="/" className="flex items-center gap-2 mb-10">
                     <span className="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
                       SHOPIFY
