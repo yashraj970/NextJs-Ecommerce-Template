@@ -299,7 +299,7 @@ export default function SalePage() {
                         </p>
                         <Button
                           variant="outline"
-                          className="self-start border-white text-white hover:bg-white/20"
+                          className="self-start bg-black/30 border-white text-white hover:bg-white/20"
                         >
                           Shop Collection
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -467,7 +467,8 @@ export default function SalePage() {
               Top Sale Products
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Discover our most popular discounted items before they&apos;re gone
+              Discover our most popular discounted items before they&apos;re
+              gone
             </p>
           </div>
 
