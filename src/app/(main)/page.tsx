@@ -2,6 +2,40 @@ import FeaturesSection from "@/components/Home/features-section";
 import { HeroImagesSlider } from "@/components/Home/ImagesSlider";
 import ProductCard from "@/components/Product/ProductCard";
 import { products } from "@/data/products";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home - NextJs Ecommerce Template",
+  description:
+    "Discover our curated selection of premium products, designed to elevate your style and enhance your everyday life.",
+  keywords: "ecommerce, shop, products, premium, style, fashion",
+  openGraph: {
+    title: "Home - NextJs Ecommerce Template",
+    description:
+      "Discover our curated selection of premium products, designed to elevate your style and enhance your everyday life.",
+    images: [
+      {
+        url: "https://example.com/og-image.jpg",
+        width: 800,
+        height: 600,
+        alt: "Og Image Alt",
+      },
+    ],
+    url: "https://example.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Home - NextJs Ecommerce Template",
+    description:
+      "Discover our curated selection of premium products, designed to elevate your style and enhance your everyday life.",
+    images: [
+      {
+        url: "https://example.com/twitter-image.jpg",
+        alt: "Twitter Image Alt",
+      },
+    ],
+  },
+};
 
 export default function Home() {
   return (
