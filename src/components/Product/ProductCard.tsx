@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function ProductCard({
   image,
@@ -70,10 +71,11 @@ export default function ProductCard({
           whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.3 }}
         >
-          <img
+          <Image
             src={image || "/placeholder.svg"}
             alt={title}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
 
           {/* Overlay */}
