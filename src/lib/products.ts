@@ -52,10 +52,7 @@ export async function getProduct(slug: string) {
 }
 
 // Get related products based on a product
-export async function getRelatedProducts(
-  productId: number,
-  limit = 4
-): Promise<ProductCardProps[]> {
+export async function getRelatedProducts(): Promise<ProductCardProps[]> {
   // In a real app, you would fetch from an API
   // For now, we'll return mock data
   return [
