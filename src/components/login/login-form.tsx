@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import Image from "next/image";
 
 export function LoginForm({
   className,
@@ -88,10 +89,11 @@ export function LoginForm({
             </div>
           </form>
           <div className="bg-muted relative hidden md:block">
-            <img
+            <Image
               src="/placeholder.svg"
               alt="Image"
-              className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+              className="absolute inset-0 object-cover dark:brightness-[0.2] dark:grayscale"
+              fill
             />
           </div>
         </CardContent>
