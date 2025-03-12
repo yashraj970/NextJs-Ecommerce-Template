@@ -44,6 +44,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import ProductCard from "@/components/Product/ProductCard";
+import Image from "next/image";
 
 // Sample product data - in a real app, this would come from an API
 const allProducts = [
@@ -367,10 +368,11 @@ export default function ShopPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Banner */}
       <div className="relative h-[300px] bg-black overflow-hidden">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop"
           alt="Shop Banner"
-          className="w-full h-full object-cover opacity-60"
+          className="object-cover opacity-60"
+          fill
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6">
           <motion.h1
@@ -733,10 +735,11 @@ export default function ShopPage() {
                       {viewMode === "list" ? (
                         <>
                           <div className="md:w-1/3 relative">
-                            <img
+                            <Image
                               src={product.image || "/placeholder.svg"}
                               alt={product.title}
-                              className="w-full h-full object-cover aspect-square md:aspect-auto"
+                              className="object-cover aspect-square md:aspect-auto"
+                              fill
                             />
                             {product.isNew && (
                               <Badge className="absolute top-4 left-4 bg-emerald-500 hover:bg-emerald-600">
