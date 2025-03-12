@@ -23,6 +23,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 
 // Sample sale products data
 const saleProducts = [
@@ -206,10 +207,11 @@ export default function SalePage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Banner */}
       <div className="relative h-[500px] bg-black overflow-hidden">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?q=80&w=2070&auto=format&fit=crop"
           alt="Sale Banner"
-          className="w-full h-full object-cover opacity-60"
+          className="object-cover opacity-60"
+          fill
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6">
@@ -282,10 +284,11 @@ export default function SalePage() {
                   <div className="p-1">
                     <Card className="overflow-hidden h-[300px] relative group">
                       <div className="absolute inset-0 bg-gradient-to-r opacity-90 z-10 transition-opacity group-hover:opacity-100 ${collection.bgColor}" />
-                      <img
+                      <Image
                         src={collection.image || "/placeholder.svg"}
                         alt={collection.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="absolute inset-0 object-cover transition-transform duration-500 group-hover:scale-110"
+                        fill
                       />
                       <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 text-white">
                         <Badge className="self-start mb-2 bg-white text-black hover:bg-white/90">
@@ -360,10 +363,11 @@ export default function SalePage() {
                     </Badge>
                   </div>
                   <div className="relative aspect-square overflow-hidden">
-                    <img
+                    <Image
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      fill
                     />
                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <Button className="bg-white text-black hover:bg-white/90">
@@ -502,10 +506,11 @@ export default function SalePage() {
                     </Button>
                   </div>
                   <div className="relative aspect-square overflow-hidden">
-                    <img
+                    <Image
                       src={product.image || "/placeholder.svg"}
                       alt={product.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      fill
                     />
                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <Button className="bg-white text-black hover:bg-white/90">
