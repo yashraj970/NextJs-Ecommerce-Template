@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { cache, Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import ProductDetails from "@/components/Product/product-details";
@@ -59,13 +59,16 @@ async function getProduct(slug: string) {
   return product;
 }
 
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+const fetchProduct = cache(getProduct);
 // Generate metadata for the page
 export async function generateMetadata({
   params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const product = await getProduct(params.slug);
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const product = await fetchProduct(slug);
 
   if (!product) {
     return {
@@ -106,13 +109,10 @@ export async function generateMetadata({
     },
   };
 }
-interface PageProps {
-  params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
 
 export default async function ProductPage({ params }: PageProps) {
-  const product = await getProduct(params.slug);
+  const { slug } = await params;
+  const product = await fetchProduct(slug);
 
   if (!product) {
     notFound();
