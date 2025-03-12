@@ -37,6 +37,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Image from "next/image";
 
 // Sample cart data for order summary
 const cartItems = [
@@ -861,10 +862,12 @@ export default function CheckoutPage() {
                             {cartItems.map((item) => (
                               <div key={item.id} className="flex gap-4">
                                 <div className="w-16 h-16 rounded-md overflow-hidden flex-shrink-0">
-                                  <img
+                                  <Image
                                     src={item.image || "/placeholder.svg"}
                                     alt={item.title}
-                                    className="w-full h-full object-cover"
+                                    className="object-cover"
+                                    width={64}
+                                    height={64}
                                   />
                                 </div>
                                 <div className="flex-grow">
@@ -962,10 +965,12 @@ export default function CheckoutPage() {
                   {cartItems.map((item) => (
                     <div key={item.id} className="flex gap-3">
                       <div className="w-12 h-12 rounded-md overflow-hidden flex-shrink-0">
-                        <img
+                        <Image
                           src={item.image || "/placeholder.svg"}
                           alt={item.title}
-                          className="w-full h-full object-cover"
+                          className="object-cover"
+                          width={48}
+                          height={48}
                         />
                       </div>
                       <div className="flex-grow">
