@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
+import Image from "next/image";
 
 // Sample cart data - in a real app, this would come from a state management solution or API
 interface CartItem {
@@ -156,10 +157,12 @@ export default function CartPage() {
                       className="p-6 flex flex-col sm:flex-row gap-4"
                     >
                       <div className="w-full sm:w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
-                        <img
+                        <Image
                           src={item.image || "/placeholder.svg"}
                           alt={item.title}
-                          className="w-full h-full object-cover"
+                          width={96}
+                          height={96}
+                          className="object-cover"
                         />
                       </div>
 
@@ -327,8 +330,8 @@ export default function CartPage() {
               </div>
               <h2 className="text-2xl font-bold mb-4">Your cart is empty</h2>
               <p className="text-gray-600 mb-8">
-                Looks like you haven&apos;t added anything to your cart yet. Browse
-                our products and find something you&apos;ll love!
+                Looks like you haven&apos;t added anything to your cart yet.
+                Browse our products and find something you&apos;ll love!
               </p>
               <Link href="/shop">
                 <Button className="bg-primary text-white hover:bg-primary/90 rounded-full">
