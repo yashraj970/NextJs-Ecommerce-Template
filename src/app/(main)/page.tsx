@@ -4,6 +4,9 @@ import ProductCard from "@/components/Product/ProductCard";
 import { products } from "@/data/products";
 import { Metadata } from "next";
 
+// Metadata for SEO
+// Adding metadata helps search engines understand the content of your page, which can improve your site's visibility and ranking.
+// You can use similar metadata on all pages to provide consistent information about your website to search engines.
 export const metadata: Metadata = {
   title: "Home - NextJs Ecommerce Template",
   description:
