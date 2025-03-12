@@ -70,7 +70,7 @@ export default async function ProductPage({ params }: PageProps) {
     notFound();
   }
 
-  const relatedProducts = await getRelatedProducts(product.id);
+  const relatedProducts = await getRelatedProducts();
 
   return (
     <main className="container mx-auto px-4 py-24">
