@@ -51,6 +51,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Image from "next/image";
 
 // Sample orders data - in a real app, this would come from your API
 interface OrderItem {
@@ -595,12 +596,14 @@ export default function OrdersPage() {
                                     {order.items.map((item) => (
                                       <div key={item.id} className="flex gap-4">
                                         <div className="w-16 h-16 rounded-md overflow-hidden flex-shrink-0">
-                                          <img
+                                          <Image
                                             src={
                                               item.image || "/placeholder.svg"
                                             }
                                             alt={item.productName}
-                                            className="w-full h-full object-cover"
+                                            className="object-cover"
+                                            width={64}
+                                            height={64}
                                           />
                                         </div>
                                         <div className="flex-grow">
@@ -695,10 +698,12 @@ export default function OrdersPage() {
                             key={item.id}
                             className="flex-shrink-0 w-16 h-16 rounded-md overflow-hidden border"
                           >
-                            <img
+                            <Image
                               src={item.image || "/placeholder.svg"}
                               alt={item.productName}
-                              className="w-full h-full object-cover"
+                              className="object-cover"
+                              width={64}
+                              height={64}
                             />
                           </div>
                         ))}
