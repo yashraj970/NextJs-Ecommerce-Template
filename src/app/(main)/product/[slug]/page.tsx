@@ -106,12 +106,12 @@ export async function generateMetadata({
     },
   };
 }
-
-export default async function ProductPage({
-  params,
-}: {
+interface PageProps {
   params: { slug: string };
-}) {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+export default async function ProductPage({ params }: PageProps) {
   const product = await getProduct(params.slug);
 
   if (!product) {
