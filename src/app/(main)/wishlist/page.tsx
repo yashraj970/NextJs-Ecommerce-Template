@@ -7,6 +7,7 @@ import { Heart, ShoppingBag, Trash2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 // Sample wishlist data
 interface WishlistItem {
@@ -135,10 +136,11 @@ export default function WishlistPage() {
 
                     {/* Image */}
                     <div className="relative aspect-square overflow-hidden">
-                      <img
+                      <Image
                         src={item.image || "/placeholder.svg"}
                         alt={item.title}
-                        className="w-full h-full object-cover"
+                        className="object-cover"
+                        fill
                       />
                     </div>
 
