@@ -106,12 +106,12 @@ export async function generateMetadata({
     },
   };
 }
-
-export default async function ProductPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+interface ProductPageProps {
+  params: {
+    slug: string;
+  };
+}
+export default async function ProductPage({ params }: ProductPageProps) {
   const product = await getProduct(params.slug);
 
   if (!product) {
