@@ -7,62 +7,14 @@ import RelatedProducts from "@/components/Product/related-products";
 import ProductReviews from "@/components/Product/product-reviews";
 // import ProductStructuredData from "@/components/seo/product-structured-data";
 import { Skeleton } from "@/components/ui/skeleton";
-
-// This would be replaced with your actual data fetching logic
-async function getProduct(slug: string) {
-  // Simulate API call
-  const product = {
-    id: 1,
-    slug: "premium-leather-jacket",
-    title: "Premium Leather Jacket",
-    description:
-      "Luxurious premium leather jacket with a modern cut and exceptional craftsmanship. Features a soft inner lining, multiple pockets, and durable YKK zippers.",
-    price: 299.99,
-    originalPrice: 399.99,
-    discount: 25,
-    rating: 4.8,
-    reviewCount: 124,
-    category: "Jackets",
-    brand: "Fashion Elite",
-    sku: "JKT-PL-001",
-    inStock: true,
-    isNew: false,
-    isFeatured: true,
-    colors: ["#000000", "#8B4513", "#708090"],
-    sizes: ["S", "M", "L", "XL"],
-    tags: ["leather", "jacket", "premium", "winter"],
-    images: [
-      "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amFja2V0fGVufDB8fDB8fHww",
-      "https://images.unsplash.com/photo-1627637454030-5ddd536e06e5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGphY2tldHxlbnwwfHwwfHx8MA%3D%3D",
-    ],
-    features: [
-      "Genuine premium leather",
-      "Soft polyester lining",
-      "YKK zippers",
-      "Multiple interior pockets",
-      "Adjustable cuffs",
-      "Water-resistant treatment",
-    ],
-    specifications: {
-      material: "Genuine leather, polyester lining",
-      care: "Professional leather cleaning only",
-      origin: "Imported",
-      weight: "1.8 kg",
-    },
-  };
-
-  // In a real app, you'd fetch from an API and handle errors
-  if (slug !== product.slug) {
-    return null;
-  }
-
-  return product;
-}
+import { getProduct, getRelatedProducts } from "@/lib/products";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
+
 const fetchProduct = cache(getProduct);
+
 // Generate metadata for the page
 export async function generateMetadata({
   params,
@@ -118,34 +70,7 @@ export default async function ProductPage({ params }: PageProps) {
     notFound();
   }
 
-  const relatedProducts = [
-    {
-      id: 2,
-      image: "/placeholder.svg?height=400&width=300",
-      title: "Casual Denim Jacket",
-      price: 129.99,
-      category: "Jackets",
-      rating: 4.5,
-      discount: 15,
-    },
-    {
-      id: 3,
-      image: "/placeholder.svg?height=400&width=300",
-      title: "Vintage Bomber Jacket",
-      price: 159.99,
-      category: "Jackets",
-      rating: 4.7,
-      isNew: true,
-    },
-    {
-      id: 4,
-      image: "/placeholder.svg?height=400&width=300",
-      title: "Waterproof Hiking Jacket",
-      price: 189.99,
-      category: "Outdoor",
-      rating: 4.6,
-    },
-  ];
+  const relatedProducts = await getRelatedProducts(product.id);
 
   return (
     <main className="container mx-auto px-4 py-24">
