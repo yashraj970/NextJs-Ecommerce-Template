@@ -32,10 +32,8 @@ async function getProduct(slug: string) {
     sizes: ["S", "M", "L", "XL"],
     tags: ["leather", "jacket", "premium", "winter"],
     images: [
-      "/placeholder.svg?height=800&width=600",
-      "/placeholder.svg?height=800&width=600&text=Side",
-      "/placeholder.svg?height=800&width=600&text=Back",
-      "/placeholder.svg?height=800&width=600&text=Detail",
+      "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amFja2V0fGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1627637454030-5ddd536e06e5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGphY2tldHxlbnwwfHwwfHx8MA%3D%3D",
     ],
     features: [
       "Genuine premium leather",
