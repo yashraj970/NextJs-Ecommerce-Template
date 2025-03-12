@@ -13,7 +13,7 @@ interface ProductGalleryProps {
 
 export default function ProductGallery({ images, title }: ProductGalleryProps) {
   const [currentImage, setCurrentImage] = useState(0);
-  const [isZoomed, setIsZoomed] = useState(false);
+  // const [isZoomed, setIsZoomed] = useState(false);
 
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % images.length);

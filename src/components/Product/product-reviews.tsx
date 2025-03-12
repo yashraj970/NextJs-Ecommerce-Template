@@ -14,7 +14,7 @@ interface ProductReviewsProps {
 }
 
 export default function ProductReviews({
-  productId,
+  // productId,
   rating,
   reviewCount,
 }: ProductReviewsProps) {
