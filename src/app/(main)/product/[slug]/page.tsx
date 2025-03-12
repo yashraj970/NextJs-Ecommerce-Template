@@ -79,21 +79,20 @@ export async function generateMetadata({
   return {
     title: `${product.title} | Your Store Name`,
     description: product.description.substring(0, 160),
-    // openGraph: {
-    //   title: `${product.title} | Your Store Name`,
-    //   description: product.description.substring(0, 160),
-    //   images: [
-    //     {
-    //       url: product.images[0],
-    //       width: 800,
-    //       height: 600,
-    //       alt: product.title,
-    //     },
-    //   ],
-    //   type: "product",
-    //   locale: "en_US",
-    //   siteName: "Your Store Name",
-    // },
+    openGraph: {
+      title: `${product.title} | Your Store Name`,
+      description: product.description.substring(0, 160),
+      images: [
+        {
+          url: product.images[0],
+          width: 800,
+          height: 600,
+          alt: product.title,
+        },
+      ],
+      locale: "en_US",
+      siteName: "Your Store Name",
+    },
     twitter: {
       card: "summary_large_image",
       title: product.title,
