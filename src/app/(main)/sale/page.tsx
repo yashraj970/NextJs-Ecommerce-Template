@@ -348,7 +348,7 @@ export default function SalePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <Card className="overflow-hidden h-full flex flex-col relative group">
+                <Card className="overflow-hidden py-0 h-full flex flex-col relative group">
                   <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
                     <Badge className="bg-red-500 hover:bg-red-600">
                       -{item.discount}%
@@ -485,7 +485,7 @@ export default function SalePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: product.id * 0.05 }}
               >
-                <Card className="overflow-hidden h-full flex flex-col relative group">
+                <Card className="overflow-hidden py-0 h-full flex flex-col relative group">
                   <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
                     <Badge className="bg-red-500 hover:bg-red-600">
                       -{product.discount}%
