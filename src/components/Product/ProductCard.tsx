@@ -32,7 +32,7 @@ export default function ProductCard({
       transition={{ duration: 0.5 }}
       className="h-full"
     >
-      <Card className="group relative overflow-hidden bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+      <Card className="group py-0 relative overflow-hidden bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col">
         {/* Badges */}
         <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
           {isNew && (
