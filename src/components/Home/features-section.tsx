@@ -84,7 +84,7 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden w-full">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black pointer-events-none" />
 
